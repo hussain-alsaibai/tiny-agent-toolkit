@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tiny-agent-toolkit"
+version = "0.1.0"
+description = "Zero-dependency Python toolkit for building reliable AI agents. Context, budget, idempotency, and more."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Hussain Al-Saibai", email = "hussain.alsaibai@gmail.com" },
+]
+keywords = [
+    "ai", "agents", "llm", "agent", "toolkit", "budget", "idempotency",
+    "scratchpad", "tool-registry", "mcp", "zero-dependency",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hussain-alsaibai/tiny-agent-toolkit"
+Repository = "https://github.com/hussain-alsaibai/tiny-agent-toolkit"
+Issues = "https://github.com/hussain-alsaibai/tiny-agent-toolkit/issues"
+
+[tool.setuptools]
+packages = ["tiny_agent_toolkit"]
+
+[tool.setuptools.package-data]
+tiny_agent_toolkit = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --strict-markers"
+
+[tool.mypy]
+python_version = "3.8"
+strict = false
+warn_unused_ignores = true
+disallow_untyped_defs = false
